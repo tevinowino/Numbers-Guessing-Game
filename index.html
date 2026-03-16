@@ -20,7 +20,7 @@
         <header id="game-header">
             <div class="logo-icon" aria-hidden="true">?</div>
             <h1>Number Guesser</h1>
-            <p class="tagline">Guess the secret number between <strong>1</strong> and <strong>10</strong></p>
+            <p class="tagline">Guess the secret number between <strong>0</strong> and <strong>10</strong></p>
         </header>
 
         <!-- Game Card -->
@@ -30,9 +30,9 @@
                 <input
                     type="number"
                     id="guess"
-                    min="1"
+                    min="0"
                     max="10"
-                    placeholder="1 – 10"
+                    placeholder="0 – 10"
                     autocomplete="off"
                 >
                 <button id="guess-btn" onclick="checkNumber()">

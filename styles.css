@@ -290,11 +290,14 @@ body {
 
 .scores-grid {
     display: flex;
+    justify-content: center;
+    align-items: center;
     flex-wrap: wrap;
     gap: var(--space-sm);
-    font-size: 0.9rem;
+    font-size: 35px;
     color: var(--text-secondary);
     line-height: 1.6;
+    color: rgb(14, 253, 225);
 }
 
 /* If JS injects score items as elements */
