@@ -1,15 +1,18 @@
 //Numbers Game Logic  
 
-// Intialize Variables 
+// Intialize Variables and getting elements
 let score = 0
-let randomNumber = Math.floor(Math.random() * 11);
+let randomNumber = generateRandomNumber()
 let userNumber;
+let gameCard = document.getElementById('game-card')
+let userInput = document.getElementById('guess')
+let resultText = document.getElementById('result')
+let scoreText = document.getElementById('scores')
+
 
 function checkNumber() {
-    //Getting the input element
-    let userInput = document.getElementById('guess')
-    let resultText = document.getElementById('result')
-    let scoreText = document.getElementById('scores')
+
+
 
     //Getting the input value
     userNumber = userInput.valueAsNumber 
@@ -17,13 +20,17 @@ function checkNumber() {
 
     if (!userNumber && userNumber !== 0) {
         alert('Choose a valid number')
-    }   
+    } 
+    
+    
 
+    displayActionButtons()
     if (userNumber == randomNumber) {
         //The user has earned a point
         score += 1
         scoreText.innerHTML = score
         resultText.innerHTML = `Correct, the number is ${randomNumber}`
+        gameCard.style.display = 'none'
         
     } else if (userNumber !== randomNumber) {
         if (userNumber < randomNumber) {
@@ -33,4 +40,29 @@ function checkNumber() {
             resultText.innerHTML = `Wrong, go lower`
         }
     } 
+}
+
+function displayActionButtons() {
+    let actionSection = document.getElementById('action-section')
+    actionSection.style.display = 'flex'
+}
+
+
+function gameAction (type = 'restart') {
+    if (type == 'restart') {
+        gameCard.style.display = 'block'
+        randomNumber = generateRandomNumber()
+    } else if (type === 'reset') {
+        gameCard.style.display = 'block'
+        randomNumber = generateRandomNumber()
+        score = 0
+        scoreText.innerHTML = score
+        resultText.innerHTML = 'Make your first guess!'
+        userInput.value = "";
+    }
+    
+}
+
+function generateRandomNumber() {
+    return Math.floor(Math.random() * 11);
 }

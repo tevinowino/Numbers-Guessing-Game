@@ -51,7 +51,19 @@
         <section id="score-card" class="card score-card">
             <h2 class="score-title">Scoreboard</h2>
             <div id="scores" class="scores-grid">
-                <!-- Scores injected by JS -->
+                0
+            </div>
+            <div id="action-section">
+                <button id="restart-btn" onclick="gameAction('restart')">
+                    <span class="btn-text">Play Again</span>
+                    <span class="btn-icon" aria-hidden="true">→</span>
+                </button>
+                <button id="reset-btn" onclick="gameAction('reset')">
+                    <span class="btn-text">Reset Scores</span>
+                    <span class="btn-icon" aria-hidden="true">→</span>
+
+                </button>
+
             </div>
         </section>
 

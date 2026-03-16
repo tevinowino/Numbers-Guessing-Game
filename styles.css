@@ -156,6 +156,8 @@ body {
     transition: border-color 0.3s var(--ease-out);
 }
 
+
+
 .card:hover {
     border-color: hsla(220, 30%, 50%, 0.22);
 }
@@ -235,6 +237,74 @@ body {
         box-shadow 0.25s var(--ease-out);
 }
 
+#restart-btn {
+        display: inline-flex;
+    align-items: center;
+    gap: var(--space-sm);
+    padding: 0.85rem 1.5rem;
+    font-family: var(--font-sans);
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--bg-base);
+    background: var(--accent);
+    border: none;
+    border-radius: var(--radius-md);
+    cursor: pointer;
+    white-space: nowrap;
+    user-select: none;
+    transition:
+        background 0.25s var(--ease-out),
+        transform 0.2s var(--ease-out),
+        box-shadow 0.25s var(--ease-out);
+
+}
+
+#reset-btn {
+        display: inline-flex;
+    align-items: center;
+    gap: var(--space-sm);
+    padding: 0.85rem 1.5rem;
+    font-family: var(--font-sans);
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--bg-base);
+    background: var(--accent);
+    border: none;
+    border-radius: var(--radius-md);
+    cursor: pointer;
+    white-space: nowrap;
+    user-select: none;
+    transition:
+        background 0.25s var(--ease-out),
+        transform 0.2s var(--ease-out),
+        box-shadow 0.25s var(--ease-out);
+
+}
+
+#restart-btn:hover {
+    background: hsl(195, 90%, 56%);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 18px var(--accent-glow);
+}
+
+#restart-btn:active {
+    transform: translateY(0) scale(0.97);
+    box-shadow: none;
+}
+
+#reset-btn:hover {
+    background: hsl(195, 90%, 56%);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 18px var(--accent-glow);
+}
+
+#reset-btn:active {
+    transform: translateY(0) scale(0.97);
+    box-shadow: none;
+}
+
+
+
 #guess-btn:hover {
     background: hsl(195, 90%, 56%);
     transform: translateY(-1px);
@@ -254,6 +324,14 @@ body {
 
 #guess-btn:hover .btn-icon {
     transform: translateX(3px);
+}
+
+
+#action-section {
+    display: none;
+    justify-content: space-between;
+    align-items: center;
+    gap: 8;
 }
 
 
