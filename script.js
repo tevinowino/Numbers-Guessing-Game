@@ -8,6 +8,10 @@ let gameCard = document.getElementById('game-card')
 let userInput = document.getElementById('guess')
 let resultText = document.getElementById('result')
 let scoreText = document.getElementById('scores')
+let highScoreText = document.getElementById('high-score') // Get access to the DOM  element
+
+let highScore = localStorage.getItem('numberGameHighScore') || 0; // Get highscore
+highScoreText.innerHTML = highScore;
 
 
 function checkNumber() {
@@ -29,6 +33,11 @@ function checkNumber() {
         //The user has earned a point
         score += 1
         scoreText.innerHTML = score
+        if (score > highScore) {
+            highScore = score;
+            localStorage.setItem('numberGameHighScore', highScore);
+            highScoreText.innerHTML = highScore;
+        }
         resultText.innerHTML = `Correct, the number is ${randomNumber}`
         gameCard.style.display = 'none'
         
